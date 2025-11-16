@@ -11,11 +11,10 @@ export default function Home() {
           <p>
             This ARTA-Compliant Customer Satisfaction Survey ensures your feedback directly contributes 
             to more efficient and citizen-friendly services in Valenzuela City.
-          </p>
+          </p>       
           
-          <NavLink to="/take-survey"> 
-            <button className="cta-btn" type="submit">Take a Survey</button>
-          </NavLink>  
+          <button className="cta-btn" type="submit">Take a Survey</button>
+
         </div>
         <div className="illustration">
           <img src={illustration} alt="illustration" />

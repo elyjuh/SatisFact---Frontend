@@ -446,6 +446,7 @@ html::-webkit-scrollbar-track {
     font-size: 39px;
     color: #00277F;
     width: 90%;
+    line-height: 3.4rem;
 }
 
 .cta p {
@@ -506,6 +507,7 @@ html::-webkit-scrollbar-track {
     text-align: left;
     padding-bottom: 1.2rem;
     width: 100%;
+    line-height: 3.4rem;
 }
 
 .steps-container {
@@ -602,6 +604,7 @@ html::-webkit-scrollbar-track {
     color: #00277f;
     margin-bottom: 1rem;
     text-align: left;
+    line-height: 3.4rem;
 }
 
 .faqs-heading p {
@@ -738,7 +741,7 @@ html::-webkit-scrollbar-track {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .footer-socials {
@@ -805,6 +808,7 @@ html::-webkit-scrollbar-track {
     font-size: 39px;
     color: #00277F;
     text-align: center;
+    line-height: 3.4rem;
 }
 
 .take-survey p {
@@ -816,7 +820,7 @@ html::-webkit-scrollbar-track {
     width: 65%;
 }
 
-.survey-code {
+.survey-code-btn {
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -826,7 +830,7 @@ html::-webkit-scrollbar-track {
     width: 50%;
 }
 
-.survey-code .code-input {
+.survey-code-btn .code-input {
     background-color: #E5E7EB;
     border: none;
     border-radius: 0.8rem;
@@ -835,15 +839,15 @@ html::-webkit-scrollbar-track {
     max-width: 350px;
 }
 
-.survey-code .code-input::placeholder {
+.survey-code-btn .code-input::placeholder {
     color: #616161;
 }
 
-.survey-code .code-input:focus {
+.survey-code-btn .code-input:focus {
     outline: 3px solid #6430C5; 
 }
 
-.survey-code .code-submit-btn {
+.survey-code-btn .code-submit-btn {
     border: none;
     background-color: transparent;
     font-size: 1.2rem;
@@ -853,7 +857,7 @@ html::-webkit-scrollbar-track {
     transition: color 0.3s ease;
 }
 
-.survey-code .code-submit-btn:hover {
+.survey-code-btn .code-submit-btn:hover {
     color: #6430C5;
 }
 
@@ -1020,6 +1024,7 @@ html::-webkit-scrollbar-track {
     font-size: 39px;
     color: #00277F;
     text-align: left;
+    line-height: 3.4rem;
 }
 
 .contact-heading p {
@@ -2198,9 +2203,14 @@ input[type=number] {
         gap: 1.5rem;
     }
 
+    .cta {
+        gap: 1rem;
+    }
+
     .cta h1 {
         font-size: 32px;
         width: 100%;
+        line-height: 3rem;
     }
 
     .illustration img {
@@ -2208,7 +2218,8 @@ input[type=number] {
     }
 
     .how-it-works h1 {
-        font-size: 32px;
+        font-size: 2rem;
+        line-height: 3rem;
     }
 
     .steps-container {
@@ -2241,10 +2252,12 @@ input[type=number] {
 
     .take-survey h1 {
         font-size: 32px;
+        line-height: 3rem;
     }
 
     .submission-heading h1 {
         font-size: 32px;
+        line-height: 3rem;
     }
 
     .contact {
@@ -2263,6 +2276,7 @@ input[type=number] {
     .contact-heading h1 {
         text-align: center;
         font-size: 32px;
+        line-height: 3rem;
     }
 
     .contact-heading p {
@@ -2529,18 +2543,20 @@ input[type=number] {
     .cta h1 {
         font-size: 28px;
         width: 85%;
+
     }
 
     .cta p {
         width: 85%;
         font-size: 0.95rem;
         line-height: 1.8rem;
+        margin-bottom: 1rem;
     }
 
     .cta button {
         font-size: 0.95rem;
     }
-
+    
     .illustration img {
         max-width: 300px;
         height: auto;
@@ -2573,6 +2589,7 @@ input[type=number] {
         font-size: 28px;
         text-align: center;
         padding: 0 2rem;
+        
     }
 
     .steps-container {
@@ -2753,12 +2770,12 @@ input[type=number] {
         width: 85%;
     }
 
-    .survey-code {
+    .survey-code-btn {
         width: 90%;
         gap: 2.2rem;
     }
 
-    .survey-code .code-input {
+    .survey-code-btn .code-input {
         max-width: 450px;
     }
 

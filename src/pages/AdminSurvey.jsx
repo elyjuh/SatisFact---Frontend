@@ -1,5 +1,6 @@
 import "../assets/admin.css";
 import "../assets/admin-survey.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import React, { useEffect, useRef, useState } from "react";
 
@@ -224,12 +225,14 @@ export default function AdminSurvey() {
   const handleCopyCode = async () => {
     try {
       await navigator.clipboard.writeText(SURVEY_CODE);
-
       console.log("Copied code:", SURVEY_CODE);
+      
     } catch (err) {
       console.warn("Clipboard copy failed", err);
     }
   };
+
+  
 
   // Simple helper to render the same HTML (survey area only)
   return (

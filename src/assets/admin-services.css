@@ -8,8 +8,8 @@ main {
 }
 
 .admin-dashboard main {
-    flex: 1;         
-    min-width: 0;    
+    flex: 1;
+    min-width: 0;
 }
 
 .modal-header h2 {
@@ -33,9 +33,9 @@ main {
 
 .user-management-actions {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     gap: 0.5rem;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .user-management-actions .btn.primary {
@@ -56,42 +56,6 @@ main {
     transform: translateY(-2px);
 }
 
-/* Role Cards */
-.role-cards {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex: 1 1 200px;
-    flex-wrap: wrap;
-}
-
-.role-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1;
-    background: var(--content-bg);
-    padding: 2rem 1rem;
-    border-radius: 24px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
-}
-
-.role-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.2rem 0.8rem;
-    border-radius: 8px;
-    color: var(--line-clr);
-    display: inline-block;
-    margin-bottom: 0.5rem;
-}
-
-.role-card.super-admin .role-label { background: #d13232; color: var(--content-bg);}
-.role-card.admin .role-label { background: #1a73e8; color: var(--content-bg);}
-.role-card.editor .role-label { background: #1a8a7f; color: var(--content-bg);}
-.role-card.viewer .role-label { background: #d4a017; color: var(--content-bg);}
-
 /* User Table */
 .user-table-wrapper {
     background: var(--content-bg);
@@ -102,7 +66,7 @@ main {
 
 .table-header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-bottom: 1rem;
     gap: 0.5rem;
 }
@@ -115,7 +79,7 @@ main {
 .user-table th, .user-table td {
     padding: 0.8rem 1rem;
     text-align: left;
-    font-size: 0.75rem
+    font-size: 0.75rem;
 }
 
 .user-table th {
@@ -187,7 +151,7 @@ input:checked + .slider:before {
     width: 60px;
     display: flex;
     flex-direction: column;
-    align-items: center !important;
+    align-items: center;
     justify-content: center;
 }
 
@@ -211,6 +175,24 @@ input:checked + .slider:before {
     border-radius: 12px; 
 }
 
+/* Responses & Rating Columns Separated */
+.user-table th[data-label="Responses"],
+.user-table th[data-label="Rating"],
+.user-table td[data-label="Responses"],
+.user-table td[data-label="Rating"] {
+    text-align: center;
+    font-weight: 500;
+}
+
+.user-table td[data-label="Rating"] i {
+    color: #f5b50a;
+    margin-left: 0.2rem;
+}
+
+.user-table tbody tr td[data-label="Service"] .user-email small {
+    color: var(--line-clr);
+}
+
 /* Action Buttons */
 .action-btn {
     border: 1px solid #d0d0d0;
@@ -218,7 +200,7 @@ input:checked + .slider:before {
     border-radius: 6px;
     padding: 0.4rem 0.6rem;
     cursor: pointer;
-    margin-right: 0.2rem;
+    margin-right: 0.3rem;
     transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
@@ -230,6 +212,19 @@ input:checked + .slider:before {
     background: #f0f2f5;
     color: var(--secondary-text-clr);
     border-color: #b0b0b0;
+}
+
+.action-btn.delete {
+    border-color: #d13232;
+}
+
+.action-btn.delete i {
+    color: #d13232;
+}
+
+.action-btn.delete:hover {
+    background: #fde6e6;
+    color: #d13232;
 }
 
 /* Pagination */
@@ -285,6 +280,7 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    position: relative;
 }
 
 .add-user-form label {
@@ -298,15 +294,10 @@ input:checked + .slider:before {
     border-radius: 0.5rem;
     font-size: 0.8rem;
     color: #1d1d1d;
-    
 }
 
 .add-user-form input:focus {
     outline: 2px solid #6430C5;
-}
-
-.add-user-form .form-field {
-  position: relative; 
 }
 
 .modal-body {
@@ -314,43 +305,16 @@ input:checked + .slider:before {
     flex-direction: column;
 }
 
-.modal-body ul {
-    margin-left: 0;
-}
-
-.add-user-form .timeline-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    background: #ffffff;
-    border: 1px solid #CCCCCC;
-    border-radius: 0.5em;
-    z-index: 1000;
-    font-size: 0.9rem;  
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-}
 
 .timeline-options li {
     padding: 0.5rem 1rem;
     cursor: pointer;
     text-align: center;
     font-size: 0.9em;
+    list-style: none;
 }
 
-.add-user-form .timeline-options li {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    text-align: center;
-    font-size: 0.9em;
-    list-style: none !important;
-    margin-left: 0;
-}
-
-.add-user-form .timeline-options li:hover {
+.timeline-options li:hover {
     background-color: #f0f0f0;
 }
 
@@ -399,29 +363,119 @@ input:checked + .slider:before {
     gap: 1rem;
 }
 
-.deployed-actions > .timeline-dropdown{
+.department-dropdown {
     position: relative;
     z-index: auto;
 }
 
+.add-service-form .department-dropdown .timeline-options,
+.edit-service-form .department-dropdown .timeline-options {
+    display: none; /* hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+/* Show dropdown when active */
+.add-service-form .department-dropdown .timeline-options.active,
+.edit-service-form .department-dropdown .timeline-options.active {
+    display: block;
+}
+
+/* Dropdown items */
+.add-service-form .department-dropdown .timeline-options li,
+.edit-service-form .department-dropdown .timeline-options li {
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.add-service-form .department-dropdown .timeline-options li:hover,
+.edit-service-form .department-dropdown .timeline-options li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ensure the timeline-btn in modal is above other content */
+.add-service-form .timeline-btn,
+.edit-service-form .timeline-btn {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Dropdown container */
+.timeline-dropdown {
+    position: relative; /* important for absolute positioning of ul */
+    z-index: 100; /* ensure dropdown is above table content */
+}
+
+/* Timeline button styling */
+.timeline-dropdown .timeline-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #1d1d1d;
+}
+
+/* Entries dropdown list */
+.timeline-dropdown .timeline-options {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Show dropdown when active */
+.timeline-dropdown .timeline-options.active {
+    display: block;
+}
+
+/* Dropdown items */
+.timeline-dropdown .timeline-options li {
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.timeline-dropdown .timeline-options li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ensure button is above other content */
+.timeline-dropdown .timeline-btn {
+    position: relative;
+    z-index: 1001;
+}
+
+
 /* Mobile Responsive Styles */
 @media (max-width: 1200px) {
-    /* Role cards */
-    .role-cards {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .role-card {
-        padding: 1.5rem;
-        text-align: left;
-    }
-
-    /* User Management header */
     .user-management-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
+        align-items: center;
     }
 
     .user-management-actions {
@@ -446,19 +500,12 @@ input:checked + .slider:before {
 
     .timeline-dropdown {
         width: 100%;
-
+        max-width: 100px;
     }
 
     .timeline-btn {
         gap: 0.2rem;
         width: 100%;
-    }
-
-    .table-header {
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-        flex-wrap: wrap;
     }
 
     .user-table thead {
@@ -491,12 +538,6 @@ input:checked + .slider:before {
         font-size: 0.75rem;
     }
 
-    .user-table tbody tr td:first-child {
-        flex-direction: row;
-        gap: 0.2rem;
-        text-align: right;
-    }
-
     .user-table tbody tr td[data-label]:before {
         content: attr(data-label);
         font-weight: 600;
@@ -506,27 +547,8 @@ input:checked + .slider:before {
         display: block;
     }
 
-    .user-table tbody tr td[data-label="Actions"] {
-        display: flex;           
-        flex-direction: row;  
-        align-items: flex-end;   
-        gap: 0.3rem;
-        margin-top: 0;
-    }
-
-    .user-table tbody tr td[data-label="Status"] .status-container {
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 0.3rem;
-    }
-
-    .user-table tbody tr td span.status-label {
-        text-align: center;
-    }
-
     .user-email {
-        display: flex;
-        flex-direction: column;
+        text-align: right;
     }
 
     .pagination {
@@ -543,21 +565,17 @@ input:checked + .slider:before {
         font-size: 1rem;
     }
 
-    br {
-        display: none;
-    }
-
     .add-user-form .form-group {
         grid-template-columns: 1fr;
     }
 
     .add-user-form {
         gap: 2rem;
-        max-height: 80vh; 
+        max-height: 80vh;
     }
 
     .modal-body {
-        justify-content: flex-start; 
+        justify-content: flex-start;
         max-height: 80vh;
         overflow-y: auto;
     }

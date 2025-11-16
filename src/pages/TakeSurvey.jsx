@@ -8,7 +8,7 @@ export default function TakeSurvey() {
           more efficient and citizen-friendly services in Valenzuela City.
         </p>
 
-        <div className="survey-code">
+        <div className="survey-code-btn">
           <input 
             type="number" 
             className="code-input"

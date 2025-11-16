@@ -22,6 +22,7 @@ export default function AdminOverview() {
 
   useEffect(() => {
     // create Trend chart
+    Chart.defaults.font.family = "Poppins, sans-serif";
     const trendCtx = trendRef.current && trendRef.current.getContext('2d');
     if (trendCtx) {
       const gradient = trendCtx.createLinearGradient(0, 0, trendCtx.canvas.width, 0);

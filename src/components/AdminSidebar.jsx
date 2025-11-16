@@ -135,6 +135,7 @@ export default function AdminSidebar({ handleLogout }) {
             <ul className={`sub-menu ${isManageOpen ? "show" : ""}`}>
               <div>
                 <li className={location.pathname === "/admin/accounts" ? "active" : ""}><NavLink to="/admin/accounts" onClick={closeMobileMenu}>Accounts</NavLink></li>
+                <li className={location.pathname === "/admin/feedback" ? "active" : ""}><NavLink to="/admin/feedback" onClick={closeMobileMenu}>Feedback</NavLink></li>
                 <li className={location.pathname === "/admin/services" ? "active" : ""}><NavLink to="/admin/services" onClick={closeMobileMenu}>Services</NavLink></li>
                 <li className={location.pathname === "/admin/support" ? "active" : ""}><NavLink to="/admin/support" onClick={closeMobileMenu}>Support</NavLink></li>
                 <li className={location.pathname === "/admin/survey" ? "active" : ""}><NavLink to="/admin/survey" onClick={closeMobileMenu}>Survey</NavLink></li>
