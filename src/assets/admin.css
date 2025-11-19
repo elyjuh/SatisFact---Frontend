@@ -39,8 +39,6 @@ body {
     grid-template-columns: auto 1fr;
 }
 
-
-
 main p {
     color: var(--secondary-text-clr);
 }
@@ -95,6 +93,7 @@ h2, p {
 
 #sidebar a span, #sidebar .dropdown-btn span {
     flex-grow: 1;
+    color: #FFFFFF;
 }
 
 #sidebar a:hover, #sidebar .dropdown-btn:hover {
@@ -112,6 +111,10 @@ h2, p {
 
 #sidebar ul li.logout {
     margin-top: auto; 
+}
+
+#sidebar ul li.logout span {
+    color: #FFFFFF;
 }
 
 #sidebar .sub-menu {

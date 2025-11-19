@@ -215,7 +215,7 @@ main {
     }
 
     .table-header {
-        justify-content: center;
+        justify-content: center !important;
     }
 
     .user-table-wrapper {

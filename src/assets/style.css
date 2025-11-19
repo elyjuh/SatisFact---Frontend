@@ -931,10 +931,10 @@ html::-webkit-scrollbar-track {
 .status span {
     text-align: right;
     font-size: 10px;
-    background-color: #DBFCE7;
-    color: #008236;
-    border: 1px solid #008236;
-    padding: 0.2rem;
+    background-color: #e6f5f1;
+    color: #1a8a7f;
+    border: 1px solid #1a8a7f;
+    padding: 0 0.5rem;
     border-radius: 75px;
 }
 

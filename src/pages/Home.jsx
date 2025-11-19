@@ -17,7 +17,7 @@ export default function Home() {
 
         </div>
         <div className="illustration">
-          <img src={illustration} alt="illustration" />
+          <img src={illustration} alt="illustration" loading="lazy"/>
         </div>
       </section>
       

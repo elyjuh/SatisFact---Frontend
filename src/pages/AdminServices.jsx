@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Modal from "../components/Modal";
+import ConfirmationModal from "../components/ConfirmationModal";
 import "../assets/admin-services.css";
 
 export default function AdminServices() {
@@ -32,6 +33,10 @@ export default function AdminServices() {
   // Dropdown states
   const [openAddDropdown, setOpenAddDropdown] = useState(null);
   const [openEditDropdown, setOpenEditDropdown] = useState(null);
+
+  // Delete confirmation states
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [serviceToDelete, setServiceToDelete] = useState(null);
 
   const entriesRef = useRef(null);
   const addDepartmentRef = useRef(null);
@@ -101,13 +106,23 @@ export default function AdminServices() {
     setShowEditServiceModal(false);
   };
 
-  const handleDeleteService = (id) => {
-    setServices(prev => prev.filter(s => s.id !== id));
-    setServiceStatuses(prev => {
-      const copy = { ...prev };
-      delete copy[id];
-      return copy;
-    });
+  // Trigger confirmation modal instead of direct delete
+  const handleDeleteClick = (id) => {
+    setServiceToDelete(id);
+    setShowDeleteConfirm(true);
+  };
+
+  const confirmDelete = () => {
+    if (serviceToDelete) {
+      setServices(prev => prev.filter(s => s.id !== serviceToDelete));
+      setServiceStatuses(prev => {
+        const copy = { ...prev };
+        delete copy[serviceToDelete];
+        return copy;
+      });
+      setServiceToDelete(null);
+      setShowDeleteConfirm(false);
+    }
   };
 
   useEffect(() => {
@@ -140,7 +155,7 @@ export default function AdminServices() {
               className={`timeline-btn ${isEntriesOpen ? "active" : ""}`}
               onClick={(e) => { e.stopPropagation(); toggleEntries(); }}
             >
-              <i class="fa-solid fa-arrow-down-short-wide" style={{ marginLeft: "6px" }}></i>
+              <i className="fa-solid fa-arrow-down-short-wide" style={{ marginLeft: "6px" }}></i>
               {entriesCount}
               <i className="fa-solid fa-chevron-down" style={{ marginLeft: "6px" }}></i>
             </button>
@@ -153,7 +168,6 @@ export default function AdminServices() {
             )}
           </div>
         </div>
-
 
         <table className="user-table">
           <thead>
@@ -194,7 +208,7 @@ export default function AdminServices() {
                 <td data-label="Actions">
                   <div className="action-btns">
                     <button className="action-btn edit" onClick={() => handleEditClick(service)}><i className="fa-solid fa-pen"></i></button>
-                    <button className="action-btn delete" onClick={() => handleDeleteService(service.id)}><i className="fa-solid fa-trash"></i></button>
+                    <button className="action-btn delete" onClick={() => handleDeleteClick(service.id)}><i className="fa-solid fa-trash"></i></button>
                   </div>
                 </td>
               </tr>
@@ -296,6 +310,16 @@ export default function AdminServices() {
           </div>
         </form>
       </Modal>
+
+      <ConfirmationModal
+        isOpen={showDeleteConfirm}
+        onClose={() => setShowDeleteConfirm(false)}
+        onConfirm={confirmDelete}
+        title="Delete Service"
+        message="Are you sure you want to delete this service?"
+        confirmText="Yes, I want to delete"
+        cancelText="Cancel"
+      />
     </>
   );
 }

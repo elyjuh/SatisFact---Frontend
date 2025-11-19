@@ -276,6 +276,10 @@ h2, p {
     transform: translateY(-2px);
 }
 
+.deployed-header .new-survey-btn i {
+    margin-right: 0.5rem;
+}
+
 .deployed-contents {
     margin-top: 2.2rem;
     background-color: #FFFFFF;
@@ -1330,7 +1334,7 @@ h2, p {
     }
 
     .subtab-btn {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.5rem;
         font-size: 0.85rem;
         min-width: 100px;
         text-align: center;
@@ -1386,6 +1390,10 @@ h2, p {
     .basic-sett-service-dept {
         flex-direction: column;
         gap: 0.75rem;
+    }
+
+    .basic-sett-service-dept > div {
+        min-width: 100%;    
     }
 
     .question-header {

@@ -138,21 +138,21 @@ export default function AdminOverview() {
                 <i className="fa-solid fa-user stat-icon" />
                 <h3>79</h3>
               </div>
-              <p>Residents</p>
+              <p>Citizen</p>
             </div>
             <div className="stat">
               <div className="stat-count">
                 <i className="fa-solid fa-briefcase stat-icon" />
                 <h3>19</h3>
               </div>
-              <p>Businesses</p>
+              <p>Business</p>
             </div>
             <div className="stat">
               <div className="stat-count">
                 <i className="fa-solid fa-building stat-icon" />
                 <h3>11</h3>
               </div>
-              <p>Governance</p>
+              <p>Government</p>
             </div>
           </div>
         </div>

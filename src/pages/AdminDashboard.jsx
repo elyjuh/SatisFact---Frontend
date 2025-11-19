@@ -4,13 +4,9 @@ import AdminOverview from "../pages/AdminOverview";
 import AdminAccounts from "../pages/AdminAccounts";
 import AdminContact from "../pages/AdminContact";
 import AdminSurvey from "../pages/AdminSurvey";
-import AdminServices from "./AdminServices";
-
-
-
-import "../assets/admin.css";
-import "../assets/admin-survey.css";
-import "../assets/admin-accounts.css";
+import AdminServices from "../pages/AdminServices";
+import AdminFeedback from "../pages/AdminFeedback";
+import AdminSurveys from "../pages/AdminSurveys";
 
 export default function AdminDashboard({ handleLogout }) {
   return (
@@ -23,6 +19,9 @@ export default function AdminDashboard({ handleLogout }) {
               <Route path="/admin/support" element={<AdminContact />} />
               <Route path="/admin/services" element={<AdminServices />} />
               <Route path="/admin/survey" element={<AdminSurvey />} />
+              <Route path="/admin/feedback" element={<AdminFeedback />} />
+              <Route path="/admin/surveys" element={<AdminSurveys />} />
+
               <Route path="*" element={<Navigate to="/admin/overview" />} />
             </Routes>
       </main>

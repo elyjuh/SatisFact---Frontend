@@ -81,7 +81,10 @@ export default function App() {
         isOpen={showLogoutConfirm}
         onClose={() => setShowLogoutConfirm(false)}
         onConfirm={confirmLogout}
-        message="Are you sure you want to logout?"
+        title="Confirm Logout"
+        message="Are you sure you want to log off?"
+        confirmText="Yes, I want to log off"
+        cancelText="Cancel"
       />
     </>
   );
