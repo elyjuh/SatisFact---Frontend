@@ -335,8 +335,12 @@ input:checked + .slider:before {
 }
 
 .timeline-dropdown.title-filter {
-    min-width: 250px;
-    
+    min-width: 250px;  
+}
+
+.timeline-dropdown.title-filter svg {
+    font-size: 1rem;
+    color: #01277E;
 }
 
 /* MOBILE RESPONSIVE */
@@ -395,6 +399,9 @@ input:checked + .slider:before {
         margin-top: 1rem;
     }
 
+    .timeline-dropdown.title-filter {
+        min-width: 180px;
+    }
     
 }
 
