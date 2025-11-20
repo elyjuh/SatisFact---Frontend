@@ -214,19 +214,6 @@ input:checked + .slider:before {
     border-color: #b0b0b0;
 }
 
-.action-btn.delete {
-    border-color: #d13232;
-}
-
-.action-btn.delete i {
-    color: #d13232;
-}
-
-.action-btn.delete:hover {
-    background: #fde6e6;
-    color: #d13232;
-}
-
 /* Pagination */
 .pagination {
     display: flex;

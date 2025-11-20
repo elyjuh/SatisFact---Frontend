@@ -155,9 +155,9 @@ export default function AdminServices() {
               className={`timeline-btn ${isEntriesOpen ? "active" : ""}`}
               onClick={(e) => { e.stopPropagation(); toggleEntries(); }}
             >
-              <i className="fa-solid fa-arrow-down-short-wide" style={{ marginLeft: "6px" }}></i>
+              <i className="fa-solid fa-arrow-down-short-wide"></i>
               {entriesCount}
-              <i className="fa-solid fa-chevron-down" style={{ marginLeft: "6px" }}></i>
+              <i className="fa-solid fa-chevron-down"></i>
             </button>
             {isEntriesOpen && (
               <ul className="timeline-options active">

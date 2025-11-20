@@ -142,14 +142,14 @@ export default function AdminOverview() {
             </div>
             <div className="stat">
               <div className="stat-count">
-                <i className="fa-solid fa-briefcase stat-icon" />
+                <i className="fa-solid fa-building stat-icon" />
                 <h3>19</h3>
               </div>
               <p>Business</p>
             </div>
             <div className="stat">
               <div className="stat-count">
-                <i className="fa-solid fa-building stat-icon" />
+                <i class="fas fa-landmark stat-icon"></i> 
                 <h3>11</h3>
               </div>
               <p>Government</p>
