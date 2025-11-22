@@ -796,6 +796,11 @@ h2, p {
     margin-bottom: 1rem;
 }
 
+.question-config {
+    display: flex;
+    gap: 1rem;
+}
+
 .question-type {
     display: flex;
     align-items: center;
@@ -804,6 +809,16 @@ h2, p {
 
 .question-type h4 {
     margin-bottom: 0 !important;
+}
+
+.code-add {
+    display: flex;
+    align-items: center;
+}
+
+.question-code-input {
+    background-color: #FFFFFF !important;
+    padding: 0.58rem 1rem !important;
 }
 
 .add-questions-btn {
@@ -1100,7 +1115,6 @@ h2, p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     margin-bottom: 2.2rem;
     width: 100%;
     gap: 1rem;
@@ -1548,6 +1562,21 @@ h2, p {
 
     .proceed-btn {
         width: 100%;
+    }
+    .question-type-block {
+        width: 100%;
+    }
+    .question-config {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    #questionTypeDropdown{
+        max-width: 100%;
+    }
+    .type-add {
+        gap: 2rem;
     }
 
     .survey-creation.active input,

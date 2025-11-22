@@ -605,44 +605,62 @@ export default function AdminSurvey() {
               </div>
             </div>
 
-            {/* Questions */}
             <div className={`subtab-content ${subTab === "questions" ? "active" : ""}`} id="questions">
               <div className="survey-information">
                 <div className="basic-sett-details">
                   <h3>Survey Questions</h3>
 
                   <div className="type-add">
-                    <div className="question-type">
-                      <h4>Question Type</h4>
-                      <div
-                        className="timeline-dropdown"
-                        id="questionTypeDropdown"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleDropdown("questionTypeDropdown");
-                        }}
-                      >
-                        <button className="timeline-btn" type="button">
-                          <span className="timeline-text">{dropdownValue.questionTypeDropdown}</span>
-                          <i className="fa-solid fa-chevron-down"></i>
-                        </button>
-                        <ul
-                          className="timeline-options"
-                          style={{ display: dropdownOpen.questionTypeDropdown ? "block" : "none" }}
+                    <div className="question-config">
+
+                      {/* QUESTION TYPE */}
+                      <div className="question-type-block">
+                        <h4>Question Type</h4>
+
+                        <div
+                          className="timeline-dropdown"
+                          id="questionTypeDropdown"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleDropdown("questionTypeDropdown");
+                          }}
                         >
-                          <li onClick={() => pickDropdownOption("questionTypeDropdown", "Checkbox")}>
-                            Checkbox
-                          </li>
-                          <li onClick={() => pickDropdownOption("questionTypeDropdown", "Short Answer")}>
-                            Short Answer
-                          </li>
-                          <li onClick={() => pickDropdownOption("questionTypeDropdown", "Multiple Choice")}>
-                            Multiple Choice
-                          </li>
-                        </ul>
+                          <button className="timeline-btn" type="button">
+                            <span className="timeline-text">{dropdownValue.questionTypeDropdown}</span>
+                            <i className="fa-solid fa-chevron-down"></i>
+                          </button>
+
+                          <ul
+                            className="timeline-options"
+                            style={{ display: dropdownOpen.questionTypeDropdown ? "block" : "none" }}
+                          >
+                            <li onClick={() => pickDropdownOption("questionTypeDropdown", "Checkbox")}>
+                              Checkbox
+                            </li>
+                            <li onClick={() => pickDropdownOption("questionTypeDropdown", "Short Answer")}>
+                              Short Answer
+                            </li>
+                            <li onClick={() => pickDropdownOption("questionTypeDropdown", "Multiple Choice")}>
+                              Multiple Choice
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* QUESTION CODE */}
+                      <div className="question-code-block">
+                        <h4>Question Code</h4>
+
+                        <input
+                          type="text"
+                          placeholder="e.g., SQ, IEQ..."
+                          required
+                          className="question-code-input"
+                        />
                       </div>
                     </div>
 
+                    {/* CREATE FORM BUTTON */}
                     <button className="add-questions-btn">
                       <i className="fa fa-plus"></i> Create Form
                     </button>
