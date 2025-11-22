@@ -103,7 +103,7 @@ function AuthScreens({ showLogin, setShowLogin, forgotStep, setForgotStep, handl
         onSignup={() => handleLoginOrSignup("user@example.com")}
         switchToLogin={() => setShowLogin(true)}
       />
-    );
+    );  
   } else if (forgotStep === "email") {
     return <EnterEmail goBack={() => setForgotStep(null)} goNext={() => setForgotStep("code")} />;
   } else if (forgotStep === "code") {

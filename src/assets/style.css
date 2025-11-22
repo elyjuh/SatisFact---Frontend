@@ -35,6 +35,17 @@ html::-webkit-scrollbar-track {
     background: transparent; 
 }
 
+.navbar-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -257,6 +268,7 @@ html::-webkit-scrollbar-track {
     color: #E63946;
     font-size: 0.75rem;
     margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
 }
@@ -580,6 +592,7 @@ html::-webkit-scrollbar-track {
     font-weight: 600;
     color: #1D1D1D;
     text-align: left;
+    line-height: 2.8rem;
 }
 
 /*  FAQs    */
