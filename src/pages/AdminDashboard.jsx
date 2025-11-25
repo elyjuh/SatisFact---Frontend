@@ -7,6 +7,8 @@ import AdminSurvey from "../pages/AdminSurvey";
 import AdminServices from "../pages/AdminServices";
 import AdminFeedback from "../pages/AdminFeedback";
 import AdminSurveys from "../pages/AdminSurveys";
+import AuditLog from "../pages/AuditLog";
+import ReportsAnalytics from "../pages/ReportsAnalytics";
 
 export default function AdminDashboard({ handleLogout }) {
   return (
@@ -21,7 +23,9 @@ export default function AdminDashboard({ handleLogout }) {
               <Route path="/admin/survey" element={<AdminSurvey />} />
               <Route path="/admin/feedback" element={<AdminFeedback />} />
               <Route path="/admin/surveys" element={<AdminSurveys />} />
-
+              <Route path="/admin/audit-log" element={<AuditLog />} />
+              <Route path="/admin/reports" element={<ReportsAnalytics />} />
+              
               <Route path="*" element={<Navigate to="/admin/overview" />} />
             </Routes>
       </main>

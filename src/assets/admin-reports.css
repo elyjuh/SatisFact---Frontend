@@ -1,0 +1,32 @@
+.reports-container {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.reports-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 1.5rem;
+}
+
+.chart-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+  .reports-charts-grid {
+    grid-template-columns: 1fr; /* stack on smaller screens */
+  }
+}

@@ -970,6 +970,10 @@ body {
 /* Large tablets (≤ 1024px) */
 @media (max-width: 1024px) {
 
+    .take-survey-container {
+        width: 100%;
+    }
+
     .reg-container,
     .survey-form-container,
     .page-header,
@@ -1021,6 +1025,8 @@ body {
         max-width: none;
         margin: 0;
     }
+
+
 }
 
 /* Standard tablets / small laptops (≤ 900px) */
@@ -1212,6 +1218,10 @@ body {
 }
 
 @media (max-width: 768px) {
+
+    .take-survey-container {
+        width: 100%;
+    }
 
     .icon-wrapper,
     .likert-na .icon-wrapper {
