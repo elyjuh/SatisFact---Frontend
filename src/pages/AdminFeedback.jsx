@@ -34,7 +34,6 @@ export default function AdminFeedback() {
   const titleTypes = ["All", ...new Set(feedbackList.map(fb => fb.title))];
   const filteredFeedback = feedbackList.filter(fb => filterTitle === "All" ? true : fb.title === filterTitle);
 
-  // Calculate average rating
   const averageRating = filteredFeedback.length > 0
     ? (filteredFeedback.reduce((sum, fb) => sum + fb.rating, 0) / filteredFeedback.length).toFixed(1)
     : 0;
@@ -104,9 +103,9 @@ export default function AdminFeedback() {
               onClick={(e) => { e.stopPropagation(); setIsTitleOpen(!isTitleOpen); }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                <path fill="currentColor" fill-rule="evenodd" d="M.75 2a.75.75 0 0 0-.75.75v1.5a.75.75 0 0 0 1.5 0V3.5h2.75v9h-.5a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5h-.5v-9H8.5v.75a.75.75 0 0 0 1.5 0v-1.5A.75.75 0 0 0 9.25 2zM8 7.75A.75.75 0 0 1 8.75 7h6.5a.75.75 0 0 1 0 1.5h-6.5A.75.75 0 0 1 8 7.75m0 3.5a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75" clip-rule="evenodd" />
+                <path fill="currentColor" fillRule="evenodd" d="M.75 2a.75.75 0 0 0-.75.75v1.5a.75.75 0 0 0 1.5 0V3.5h2.75v9h-.5a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5h-.5v-9H8.5v.75a.75.75 0 0 0 1.5 0v-1.5A.75.75 0 0 0 9.25 2zM8 7.75A.75.75 0 0 1 8.75 7h6.5a.75.75 0 0 1 0 1.5h-6.5A.75.75 0 0 1 8 7.75m0 3.5a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75" clipRule="evenodd" />
               </svg>
-              
+
               {filterTitle}
               <i className="fa-solid fa-chevron-down"></i>
             </button>
@@ -190,36 +189,86 @@ export default function AdminFeedback() {
       {/* Response Modal */}
       <Modal isOpen={openResponseModal} title="User Response" onClose={() => setOpenResponseModal(false)}>
         {selectedResponse && (
-          <div>
-            <h4>Export as</h4>
-            <div className="export-buttons">
-              <button className="export-btn">PDF</button>
-              <button className="export-btn">CSV</button>
-              <button className="export-btn">XLS</button>
+          <div className="response-container">
+           <div className="responses-data">
+             <h4>Export as</h4>
+              <div className="export-buttons">
+                <button className="export-btn">PDF</button>
+                <button className="export-btn">XLS</button>
+              </div>
+           </div>
+
+            <div className="responses-data">
+              <h4>Demographic Profile</h4>
+              <div className="response-details">
+
+                <p><i className="fa-solid fa-user"></i>
+                  {selectedResponse.anonymous ? "Anonymous" : selectedResponse.userName}
+                </p>
+
+                <p><i className="fa-solid fa-envelope"></i>
+                  {selectedResponse.email}
+                </p>
+
+                <p><i className="fa-solid fa-calendar"></i>
+                  {selectedResponse.submittedDate}
+                </p>
+
+                <p><i className="fa-solid fa-clipboard-check"></i>
+                  {selectedResponse.status}
+                </p>
+
+                <p><i className="fa-solid fa-star"></i>
+                  {selectedResponse.rating}
+                </p>
+
+                {selectedResponse.collectDemographics && (
+                  <>
+                    <p><i className="fa-solid fa-venus-mars"></i>
+                      {selectedResponse.anonymous ? "Anonymous" : selectedResponse.demographics.sex}
+                    </p>
+
+                    <p><i className="fa-solid fa-user-clock"></i>
+                      {selectedResponse.anonymous ? "Anonymous" : `${selectedResponse.demographics.age} years old`}
+                    </p>
+
+                    <p><i className="fa-solid fa-users"></i>
+                      {selectedResponse.demographics.clientType}
+                    </p>
+
+                    <p><i className="fa-solid fa-map-location-dot"></i>
+                      {selectedResponse.demographics.region}
+                    </p>
+
+                    <p className="full-width"><i className="fa-solid fa-briefcase"></i>
+                      {selectedResponse.demographics.serviceAvailed}
+                    </p>
+                  </>
+                )}
+              </div>
             </div>
 
-            <div className="response-details">
-              <p><strong>Name:</strong> {selectedResponse.anonymous ? "Anonymous" : selectedResponse.userName}</p>
-              <p><strong>Email:</strong> {selectedResponse.email}</p>
-              <p><strong>Submitted Date:</strong> {selectedResponse.submittedDate}</p>
-              <p><strong>Status:</strong> {selectedResponse.status}</p>
-              <p><strong>Rating:</strong> {selectedResponse.rating}</p>
+            {/* QUESTIONS BLOCK */}
+            <div className="responses-data">
+              <h4>Responses</h4>
+              <div className="response-list">
+                <ul>
+                  <li>
+                    <strong>How would you rate the service?</strong>
+                    <p className="answer">{selectedResponse.rating} / 5</p>
+                  </li>
 
-              {selectedResponse.collectDemographics && (
-                <div className="demographics">
-                  <p><strong>Sex:</strong> {selectedResponse.anonymous ? "Anonymous" : selectedResponse.demographics.sex}</p>
-                  <p><strong>Age:</strong> {selectedResponse.anonymous ? "Anonymous" : selectedResponse.demographics.age}</p>
-                  <p><strong>Client Type:</strong> {selectedResponse.demographics.clientType}</p>
-                  <p><strong>Region of Residence:</strong> {selectedResponse.demographics.region}</p>
-                  <p><strong>Service Availed:</strong> {selectedResponse.demographics.serviceAvailed}</p>
-                </div>
-              )}
-
-              <p><strong>Response:</strong> {selectedResponse.response}</p>
+                  <li>
+                    <strong>Please describe your experience:</strong>
+                    <p className="answer">{selectedResponse.response}</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         )}
       </Modal>
+
     </>
   );
 }
